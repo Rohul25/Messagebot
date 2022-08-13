@@ -439,9 +439,9 @@ async def button(bot: Client, cmd: CallbackQuery):
                                reply_markup=InlineKeyboardMarkup([
                                    [InlineKeyboardButton("Gᴇᴛ Lɪɴᴋ", callback_data="getBatchLink")]
                                ]))
-        await cmd.message.edit("𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴𝙳! /n/n𝚂𝙴𝙽𝙳 𝙵𝙸𝙻𝙴𝚂 𝚃𝙾 𝚂𝚃𝙾𝚁𝙴 𝙾𝚁 𝙴𝙻𝚂𝙴 𝙲𝙻𝙸𝙲𝙺 𝙶ᴇᴛ 𝙻ɪɴᴋ.",
+        await cmd.message.edit("𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴𝙳!\n\nn𝚂𝙴𝙽𝙳 𝙵𝙸𝙻𝙴𝚂 𝚃𝙾 𝚂𝚃𝙾𝚁𝙴 𝙾𝚁 𝙴𝙻𝚂𝙴 𝙲𝙻𝙸𝙲𝙺 𝙶ᴇᴛ 𝙻ɪɴᴋ.",
                                reply_markup=InlineKeyboardMarkup([
-                                   [InlineKeyboardButton("Gᴇᴛ Lɪɴᴋ", callback_data="getBatchLink"),
+                                   [InlineKeyboardButton("Gᴇᴛ Bᴀᴛᴄʜ Lɪɴᴋ", callback_data="getBatchLink"),
                                     InlineKeyboardButton("Cʟᴏsᴇ 🔐", callback_data="closeMessage")]
                                ]))
 
