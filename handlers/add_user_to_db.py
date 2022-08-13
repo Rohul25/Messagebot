@@ -1,4 +1,4 @@
-# (c) @AbirHasan2005
+# (c) @ThaniOruvan25 
 
 from configs import Config
 from handlers.database import db
@@ -12,5 +12,5 @@ async def add_user_to_database(bot: Client, cmd: Message):
         if Config.LOG_CHANNEL is not None:
             await bot.send_message(
                 int(Config.LOG_CHANNEL),
-                f"#New_User! \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) started @{Config.BOT_USERNAME} !!"
+                f"#NewUser! \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) started @{Config.BOT_USERNAME} !!"
             )
