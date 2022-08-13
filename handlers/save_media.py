@@ -51,7 +51,7 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
         )
         share_link = f"https://t.me/{Config.BOT_USERNAME}?start=ThaniOruvan25_{str_to_b64(str(SaveMessage.id))}"
         await editable.edit(
-            f"**Stored Video Link:**\n\n<code>{share_link}</code\n\n"
+            f"**Stored Video Link:**\n\n<code>{share_link}</code>\n\n"
             f"**Just Click the link to get your Stored Video!**",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("ᴏᴘᴇɴ ᴛʜᴇ ʟɪɴᴋ", url=share_link)],
@@ -89,7 +89,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             disable_web_page_preview=True)
         share_link = f"https://t.me/{Config.BOT_USERNAME}?start=ThaniOruvan25_{str_to_b64(file_er_id)}"
         await editable.edit(
-            f"**Stored Video Link:**\n\n<code>{share_link}</code\n\n"
+            f"**Stored Video Link:**\n\n<code>{share_link}</code>\n\n"
             f"**Just Click the link to get your Stored Video!**",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("ᴏᴘᴇɴ ᴛʜᴇ ʟɪɴᴋ", url=share_link)],
