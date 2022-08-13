@@ -435,10 +435,14 @@ async def button(bot: Client, cmd: CallbackQuery):
         file_id = cmd.message.reply_to_message.id
         MediaList[f"{str(cmd.from_user.id)}"].append(file_id)
         await cmd.message.edit("File Saved in Batch!\n\n"
-                               "Press below button to get batch link.",
+                               "𝙸𝙵 𝚈𝙾𝚄 𝚃𝙷𝙸𝙽𝙺 𝙸𝚃'𝚂 𝙴𝙽𝙾𝚄𝙶𝙷 𝙲𝙻𝙸𝙲𝙺 Gᴇᴛ Lɪɴᴋ 𝚘𝚛 𝚂𝙴𝙽𝙳 𝙼𝙾𝚁𝙴 𝙵𝙸𝙻𝙴𝚂 𝚃𝙾 𝙰𝙳𝙳 𝙸𝙽 𝙱𝙰𝚃𝙲𝙷",
                                reply_markup=InlineKeyboardMarkup([
-                                   [InlineKeyboardButton("Get Batch Link", callback_data="getBatchLink")],
-                                   [InlineKeyboardButton("Close Message", callback_data="closeMessage")]
+                                   [InlineKeyboardButton("Gᴇᴛ Lɪɴᴋ", callback_data="getBatchLink")]
+                               ]))
+        await cmd.message.edit("𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴𝙳! /n/n𝚂𝙴𝙽𝙳 𝙵𝙸𝙻𝙴𝚂 𝚃𝙾 𝚂𝚃𝙾𝚁𝙴 𝙾𝚁 𝙴𝙻𝚂𝙴 𝙲𝙻𝙸𝙲𝙺 𝙶ᴇᴛ 𝙻ɪɴᴋ.",
+                               reply_markup=InlineKeyboardMarkup([
+                                   [InlineKeyboardButton("Gᴇᴛ Lɪɴᴋ", callback_data="getBatchLink"),
+                                    InlineKeyboardButton("Cʟᴏsᴇ 🔐", callback_data="closeMessage")]
                                ]))
 
     elif "addToBatchFalse" in cb_data:
@@ -449,7 +453,7 @@ async def button(bot: Client, cmd: CallbackQuery):
         if message_ids is None:
             await cmd.answer("Batch List Empty!", show_alert=True)
             return
-        await cmd.message.edit("Please wait, generating batch link ...")
+        await cmd.message.edit("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ...")
         await save_batch_media_in_channel(bot=bot, editable=cmd.message, message_ids=message_ids)
         MediaList[f"{str(cmd.from_user.id)}"] = []
 
