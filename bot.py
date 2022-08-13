@@ -78,8 +78,8 @@ async def start(bot: Client, cmd: Message):
                         InlineKeyboardButton("sᴇʀɪᴀʟs ᴄʜᴀɴɴᴇʟ", url="https://t.me/TgTamilSerials")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("Aʙᴏᴜᴛ Bᴏᴛ", callback_data="aboutbot"),
+                        InlineKeyboardButton("Aʙᴏᴜᴛ Dᴇᴠ", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -120,7 +120,7 @@ async def main(bot: Client, message: Message):
                 return
 
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/JoinOT)",
+            await message.reply_text("𝚂𝙾𝚁𝚁𝚈 𝚂𝙾𝙼𝙴𝚃𝙷𝙸𝙽𝙶 𝚆𝙴𝙽𝚃 𝚆𝚁𝙾𝙽𝙶! 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 𝙻𝙰𝚃𝙴𝚁 𝙰𝙽𝙳 𝚁𝙴𝙿𝙾𝚁𝚃 𝙸𝙽 𝙼𝚈 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 [𝙻𝙸𝙽𝙺 𝙸𝙽 𝙰𝙱𝙾𝚄𝚃 𝚃𝙰𝙱].",
                                      disable_web_page_preview=True)
             return
 
@@ -128,10 +128,10 @@ async def main(bot: Client, message: Message):
             return
 
         await message.reply_text(
-            text="**Choose an option from below:**",
+            text="**𝙲𝙷𝙾𝙾𝚂𝙴 𝙰𝙽 𝙾𝙿𝚃𝙸𝙾𝙽 𝙵𝚁𝙾𝙼 𝙱𝙴𝙻𝙾𝚆:**",
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("Save in Batch", callback_data="addToBatchTrue")],
-                [InlineKeyboardButton("Get Sharable Link", callback_data="addToBatchFalse")]
+                [InlineKeyboardButton("Sᴀᴠᴇ Iɴ Bᴀᴛᴄʜ", callback_data="addToBatchTrue"),
+                 InlineKeyboardButton("Gᴇᴛ Lɪɴᴋ", callback_data="addToBatchFalse")]
             ]),
             quote=True,
             disable_web_page_preview=True
@@ -148,7 +148,7 @@ async def main(bot: Client, message: Message):
         try:
             forwarded_msg = await message.forward(Config.DB_CHANNEL)
             file_er_id = str(forwarded_msg.id)
-            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=AbirHasan2005_{str_to_b64(file_er_id)}"
+            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=ThaniOruvan25_{str_to_b64(file_er_id)}"
             CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.id,
                                                           reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                                                               "Get Sharable Link", url=share_link)]]))
@@ -371,7 +371,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(channel_chat_id, cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/JoinOT).",
+                        text="Sorry Sir, You are Banned to use me. Contact my Support [Link At About Tab].",
                         disable_web_page_preview=True
                     )
                     return
