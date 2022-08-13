@@ -55,7 +55,7 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
             f"**Just Click the link to get your Stored Video!**",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("ᴏᴘᴇɴ", url=share_link),
-                  InlineKeyboardButton("sʜᴀʀᴇ", url=https://t.me/share/url?url=share_link)]
+                  InlineKeyboardButton("sʜᴀʀᴇ", url=https://t.me/share/url?=share_link)]
                  [InlineKeyboardButton("ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ", url="https://t.me/ViralBeatz"),
                   InlineKeyboardButton("sᴇʀɪᴀʟs ᴄʜᴀɴɴᴇʟ", url="https://t.me/TgTamilSerials")]]
             ),
@@ -100,7 +100,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             f"**Just Click the link to get your Stored Video!**",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("ᴏᴘᴇɴ", url=share_link),
-                  InlineKeyboardButton("sʜᴀʀᴇ", url=https://t.me/share/url?url=share_link)] 
+                  InlineKeyboardButton("sʜᴀʀᴇ", url=https://t.me/share/url?=share_link)] 
                  [InlineKeyboardButton("ᴍᴏᴠɪᴇs Cʜᴀɴɴᴇʟ", url="https://t.me/ViralBeatz"),
                   InlineKeyboardButton("sᴇʀɪᴀʟs ᴄʜᴀɴɴᴇʟ", url="https://t.me/TgTamilSerials")]]
             ),
