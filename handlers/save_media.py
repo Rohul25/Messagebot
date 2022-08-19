@@ -91,7 +91,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
         forwarded_msg = await message.forward(Config.DB_CHANNEL)
         file_er_id = str(forwarded_msg.id)
         await forwarded_msg.reply_text(
-            f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!\n\n<b><i>Link - {share_link}</b></i>",
+            f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!",
             disable_web_page_preview=True)
         share_link = f"https://t.me/{Config.BOT_USERNAME}?start=ThaniOruvan25_{str_to_b64(file_er_id)}"
         await editable.edit(
@@ -99,7 +99,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             f"**Just Click the link to get your Stored Video!**",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("ᴏᴘᴇɴ", url=share_link)],
-                 [InlineKeyboardButton("ᴍᴏᴠɪᴇs Cʜᴀɴɴᴇʟ", url="https://t.me/ViralBeatz"),
+                 [InlineKeyboardButton("ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ", url="https://t.me/ViralBeatz"),
                   InlineKeyboardButton("sᴇʀɪᴀʟs ᴄʜᴀɴɴᴇʟ", url="https://t.me/TgTamilSerials")]]
             ),
             disable_web_page_preview=True
