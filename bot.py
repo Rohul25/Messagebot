@@ -95,7 +95,7 @@ async def start(bot: Client, cmd: Message):
             if GetMessage.text:
                 message_ids = GetMessage.text.split(" ")
                 _response_msg = await cmd.reply_text(
-                    text=f"**Total Files:** `{len(message_ids)}`",
+                    text=f"**Total Files:** `{len(message_ids)}`\n\n <i>The Files Take Some Time To Upload, Please be Patient.</i>",
                     quote=True,
                     disable_web_page_preview=True
                 )
@@ -439,6 +439,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                                reply_markup=InlineKeyboardMarkup([
                                    [InlineKeyboardButton("Gᴇᴛ Lɪɴᴋ", callback_data="getBatchLink")]
                                ]))
+        await cmd.sleep(5)
         await cmd.message.edit("𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴𝙳!\n\n𝚂𝙴𝙽𝙳 𝙵𝙸𝙻𝙴𝚂 𝚃𝙾 𝚂𝚃𝙾𝚁𝙴 𝙾𝚁 𝙴𝙻𝚂𝙴 𝙲𝙻𝙸𝙲𝙺 𝙶ᴇᴛ 𝙻ɪɴᴋ.",
                                reply_markup=InlineKeyboardMarkup([
                                    [InlineKeyboardButton("Gᴇᴛ Bᴀᴛᴄʜ Lɪɴᴋ", callback_data="getBatchLink"),
