@@ -95,7 +95,7 @@ async def start(bot: Client, cmd: Message):
             if GetMessage.text:
                 message_ids = GetMessage.text.split(" ")
                 _response_msg = await cmd.reply_text(
-                    text=f"**Total Files:** `{len(message_ids)}`\n\n <i>The Files Take Some Time To Upload, Please be Patient.</i>",
+                    text=f"**Total Files:** `{len(message_ids)}`\n\n ➪<i>The Files Take Some Time To Upload, Please be Patient Till `{len(message_ids)}` Files get Upload.</i>",
                     quote=True,
                     disable_web_page_preview=True
                 )
@@ -439,7 +439,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                                reply_markup=InlineKeyboardMarkup([
                                    [InlineKeyboardButton("Gᴇᴛ Lɪɴᴋ", callback_data="getBatchLink")]
                                ]))
-        await cmd.sleep(5)
+        await asyncio.sleep(5)
         await cmd.message.edit("𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴𝙳!\n\n𝚂𝙴𝙽𝙳 𝙵𝙸𝙻𝙴𝚂 𝚃𝙾 𝚂𝚃𝙾𝚁𝙴 𝙾𝚁 𝙴𝙻𝚂𝙴 𝙲𝙻𝙸𝙲𝙺 𝙶ᴇᴛ 𝙻ɪɴᴋ.",
                                reply_markup=InlineKeyboardMarkup([
                                    [InlineKeyboardButton("Gᴇᴛ Bᴀᴛᴄʜ Lɪɴᴋ", callback_data="getBatchLink"),
@@ -454,7 +454,8 @@ async def button(bot: Client, cmd: CallbackQuery):
         if message_ids is None:
             await cmd.answer("Batch List Empty!", show_alert=True)
             return
-        await cmd.message.edit("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ...")
+        await cmd.message.edit("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ...\n\nFiles Take Some Time To Save in my Memory⏳. \nNote - These Files Are Strongly Protected ⚒️ and there is not database for storing. No one can access the Bot's Memory ❌. ")
+        await asyncio.sleep(10)
         await save_batch_media_in_channel(bot=bot, editable=cmd.message, message_ids=message_ids)
         MediaList[f"{str(cmd.from_user.id)}"] = []
 
