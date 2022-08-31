@@ -22,13 +22,13 @@ broadcast_ids = {}
 async def send_msg(user_id, message):
     try:
         if Config.BROADCAST_AS_COPY is False:
-            await message.forward(chat_id=user_id)
+            await message.forward(chat_id=user_id, protect_content=True)
         elif Config.BROADCAST_AS_COPY is True:
-            await message.copy(chat_id=user_id)
+            await message.copy(chat_id=user_id, protect_content=True)
         return 200, None
     except FloodWait as e:
         await asyncio.sleep(e.value)
-        return send_msg(user_id, message)
+        return send_msg(user_id, message, protect_content=True)
     except InputUserDeactivated:
         return 400, f"{user_id} : deactivated\n"
     except UserIsBlocked:
