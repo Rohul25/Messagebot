@@ -84,6 +84,7 @@ async def start(bot: Client, cmd: Message):
                 ]
             )
         )
+        await asyncio.delete(86400)
     else:
         try:
             try:
@@ -136,6 +137,7 @@ async def main(bot: Client, message: Message):
             quote=True,
             disable_web_page_preview=True
         )
+        await asyncio.delete(86400)
     elif message.chat.type == enums.ChatType.CHANNEL:
         if (message.chat.id == int(Config.LOG_CHANNEL)) or (message.chat.id == int(Config.UPDATES_CHANNEL)) or message.forward_from_chat or message.forward_from:
             return
@@ -324,6 +326,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 ]
             )
         )
+        await asyncio.delete(86400)
 
     elif "aboutdevs" in cb_data:
         await cmd.message.edit(
@@ -342,6 +345,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 ]
             )
         )
+        await asyncio.delete(86400)
 
     elif "gotohome" in cb_data:
         await cmd.message.edit(
@@ -360,6 +364,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 ]
             )
         )
+        await asyncio.delete(86400)
 
     elif "refreshForceSub" in cb_data:
         if Config.UPDATES_CHANNEL:
@@ -391,12 +396,14 @@ async def button(bot: Client, cmd: CallbackQuery):
                         ]
                     )
                 )
+                await asyncio.delete(400)
                 return
             except Exception:
                 await cmd.message.edit(
                     text="Something went Wrong. Contact my Support (Link At About Tab).",
                     disable_web_page_preview=True
                 )
+                await asyncio.delete(86400)
                 return
         await cmd.message.edit(
             text=Config.HOME_TEXT.format(cmd.message.chat.first_name, cmd.message.chat.id),
@@ -414,6 +421,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 ]
             )
         )
+        await asyncio.delete(86400)
 
     elif cb_data.startswith("ban_user_"):
         user_id = cb_data.split("_", 2)[-1]
@@ -445,6 +453,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                                    [InlineKeyboardButton("Gᴇᴛ Bᴀᴛᴄʜ Lɪɴᴋ", callback_data="getBatchLink"),
                                     InlineKeyboardButton("Cʟᴏsᴇ 🔐", callback_data="closeMessage")]
                                ]))
+        await asyncio.delete(86400)
 
     elif "addToBatchFalse" in cb_data:
         await save_media_in_channel(bot, editable=cmd.message, message=cmd.message.reply_to_message)
